@@ -2,5 +2,5 @@
 
 replayfile="`basename $1`"
 
-env WINEPREFIX="@WINEPREFIX@" /usr/bin/wine C:\\windows\\command\\start.exe /Unix @WINEPREFIX@/dosdevices/c:/Games/@WOWSTOP@/WorldOfWarships.exe "C:\\Games\\@WOWSTOP@\\replays\\${replayfile}"
+env WINEPREFIX="@WINEPREFIX@" /usr/bin/wine C:\\windows\\command\\start.exe /Unix @LINUXPATH@/WorldOfWarships.exe "@WINPATH@\\replays\\${replayfile}"
 
