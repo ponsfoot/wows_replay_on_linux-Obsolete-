@@ -14,8 +14,8 @@ wowspath=`sed -n 's/Path=\(.\+\)/\1/p' ${menudir}/World\ of\ Warships.desktop`
 wowstop=`basename $wowspath`
 launcher="${basedir}/play_replay_wows.sh"
 
-sed -e "s|@WINEPREFIX@|${wineprefix}|g;s|@WOWSTOP@|${wowstop}|g" "${basedir}/play_replay_wows.sh.templete" > "$launcher"
-sed -e "s|@LAUNCHER@|${launcher}|g;s|@WOWSPATH@|${wowspath}|g" "${basedir}/wows_replay.desktop.template" > "${XDG_DATA_HOME}/applications/wows_replay.desktop"
+sed "s|@WINEPREFIX@|${wineprefix}|g;s|@WOWSTOP@|${wowstop}|g" "${basedir}/play_replay_wows.sh.templete" > "$launcher"
+sed "s|@LAUNCHER@|${launcher}|g;s|@WOWSPATH@|${wowspath}|g" "${basedir}/wows_replay.desktop.template" > "${XDG_DATA_HOME}/applications/wows_replay.desktop"
 cp -af "${basedir}/x-wine-wows-replay.xml" "${XDG_DATA_HOME}/mime/packages/"
 
 update-mime-database "${XDG_DATA_HOME}/mime/"
