@@ -10,7 +10,7 @@ If `${XDG_DATA_HOME}` is not set, default is equal to `${HOME}/.local/share/`.
 5. Edit path in `wows_replay.desktop` as follows:
 	- `Exec=` to your `play_replay_wows.sh`
 	- `Path=` to your WoWS installed
-6. update mime and desktop database
+6. Update mime and desktop database
 	- `$ update-desktop-database ${XDG_DATA_HOME}/applications/`
 	- `$ update-mime-database ${XDG_DATA_HOME}/mime/`
 
