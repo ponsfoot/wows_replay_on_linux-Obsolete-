@@ -17,3 +17,4 @@ run `setup.sh` on terminal.
 	- Shell script to launch WoWS with replay file which modified to Windows path
 	- If you move this script somewhere, you should modify ${XDG_DATA_HOME}/applications/wows_replay.desktop (Exec=)
 
+if ${XDG_DATA_HOME} is not set, default is equal to `${HOME}/.local/share`.

@@ -18,7 +18,7 @@ sed -e "s|@WINEPREFIX@|${wineprefix}|g;s|@WOWSTOP@|${wowstop}|g" "${basedir}/pla
 sed -e "s|@LAUNCHER@|${launcher}|g;s|@WOWSPATH@|${wowspath}|g" "${basedir}/wows_replay.desktop.template" > "${XDG_DATA_HOME}/applications/wows_replay.desktop"
 cp -af "${basedir}/x-wine-wows-replay.xml" "${XDG_DATA_HOME}/mime/packages/"
 
-update-mime-database "${XDG_DATA_HOME}/mime"
+update-mime-database "${XDG_DATA_HOME}/mime/"
 update-desktop-database "${XDG_DATA_HOME}/applications/"
 
 chmod +x "$launcher"
