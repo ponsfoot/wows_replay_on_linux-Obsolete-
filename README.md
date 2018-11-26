@@ -14,6 +14,6 @@ run `setup.sh`
 - ${XDG_DATA_HOME}/applications/wows_replay.desktop
 	- .desktop file to assagin replay files to WoWS
 - wows_replay_on_linux-master/play_replay_wows.sh
-	- Shell script to launch replay file which modifies the path to Windows style
+	- Shell script to launch replay file whth modified path for Windows
 	- If you move this script somewhere, you should modify ${XDG_DATA_HOME}/applications/wows_replay.desktop (Exec=)
 
