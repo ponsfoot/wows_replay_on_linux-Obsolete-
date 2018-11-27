@@ -8,6 +8,9 @@ case "$1" in
         replayfile=`sed -n 's|.*drive_\([a-z]\)\(.\+\)|\1:\2|p' <<< "$1"`
         ;;
     *)
+        if [[ -f /usr/bin/notify-send ]]; then
+            /usr/bin/notify-send -i F66B_WoWSLauncher.0 'Failed to play WoWS replay' "File path is not Wine drive configuration:\n$1"
+        fi
         exit 1
         ;;
 esac
