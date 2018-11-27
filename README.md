@@ -13,8 +13,7 @@ run `setup.sh` on terminal.
 	- Add MIME-type for replay file named "application/x-wine-wows-replay"
 - ${XDG_DATA_HOME}/applications/wows_replay.desktop
 	- .desktop file to assagin replay files to the following launch script
-- wows_replay_on_linux-master/play_replay_wows.sh
+- $WINEPREFIX/ *\<directory WoWS installed (c:/Game/)\>* /play_replay_wows.sh
 	- Shell script to launch WoWS with replay file which modified to Windows path
-	- If you move this script somewhere, you should modify ${XDG_DATA_HOME}/applications/wows_replay.desktop (Exec=)
 
 if ${XDG_DATA_HOME} is not set, default is equal to `${HOME}/.local/share`.
