@@ -1,6 +1,17 @@
 #!/usr/bin/bash -e
 
-replayfile="${1#*dosdevices/}"
+case "$1" in
+    *dosdevices*)
+        replayfile="${1#*dosdevices/}"
+        ;;
+    *drive_*)
+        replayfile=`sed -n 's|.*drive_\([a-z]\)\(.\+\)|\1:\2|p' <<< $1`
+        ;;
+    *)
+        exit 1
+        ;;
+esac
+
 replayfile="${replayfile//\//\\\\}"
 
 env WINEPREFIX="@WINEPREFIX@" /usr/bin/wine C:\\windows\\command\\start.exe /Unix @WOWSPATH@/WorldOfWarships.exe "$replayfile"
