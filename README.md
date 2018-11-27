@@ -20,5 +20,6 @@ Replay files are stored in `${WINEPREFIX}/dosdevices/c:/Games/World_of_Warships 
 if $XDG_DATA_HOME is not set, default is equal to `${HOME}/.local/share`.
 
 ## Note
+- WGC is not supported.
 - Replay files have to be placed under dosdrives (can be described as Windows path) and same $WINEPREFIX with WoWS installed.
 - If you have installed WoWS plural (e.g. WoWS_NA and WoWS_RU), first one sorted by name will be chosen as replay environment.
