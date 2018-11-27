@@ -5,7 +5,7 @@ case "$1" in
         replayfile="${1#*dosdevices/}"
         ;;
     */drive_[a-z]/*)
-        replayfile=`sed -n 's|.*drive_\([a-z]\)\(.\+\)|\1:\2|p' <<< $1`
+        replayfile=`sed -n 's|.*drive_\([a-z]\)\(.\+\)|\1:\2|p' <<< "$1"`
         ;;
     *)
         exit 1
