@@ -15,7 +15,7 @@ winpath=`sed -n 's|.*dosdevices/\(.\+\)|\1|p' <<< "$linuxpath"`
 winpath=${winpath//\//\\\\\\\\}
 launcher="${basedir}/play_replay_wows.sh"
 
-sed "s|@WINEPREFIX@|${wineprefix}|g;s|@LINUXPATH@|${linuxpath}|g;s|@WINPATH@|${winpath}|g" "${basedir}/play_replay_wows.sh.templete" > "$launcher"
+sed "s|@WINEPREFIX@|${wineprefix}|g;s|@LINUXPATH@|${linuxpath}|g;s|@WINPATH@|${winpath}|g" "${basedir}/play_replay_wows.sh.template" > "$launcher"
 sed "s|@LAUNCHER@|${launcher}|g;s|@LINUXPATH@|${linuxpath}|g" "${basedir}/wows_replay.desktop.template" > "${XDG_DATA_HOME}/applications/wows_replay.desktop"
 cp -af "${basedir}/x-wine-wows-replay.xml" "${XDG_DATA_HOME}/mime/packages/"
 
