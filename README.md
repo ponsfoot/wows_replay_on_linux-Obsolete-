@@ -9,7 +9,7 @@ Replay files are stored in `${WINEPREFIX}/dosdevices/c:/Games/World_of_Warships 
 1. Right click on a replay file (*.wowsreplay)
 2. Choose "Open with World of Warships play replay"
 
-## Contents
+## What files are installed
 - ${XDG_DATA_HOME}/mime/packages/x-wine-wows-replay.xml
 	- Add MIME-type for replay file named "application/x-wine-wows-replay"
 - ${XDG_DATA_HOME}/applications/wows_replay.desktop
