@@ -1,6 +1,6 @@
 #!/usr/bin/bash -e
 
-replayfile="`basename $1`"
+replayfile="${1#*dosdevices/}"
+replayfile="${replayfile//\//\\\\}"
 
-env WINEPREFIX="@WINEPREFIX@" /usr/bin/wine C:\\windows\\command\\start.exe /Unix @LINUXPATH@/WorldOfWarships.exe "@WINPATH@\\replays\\${replayfile}"
-
+env WINEPREFIX="@WINEPREFIX@" /usr/bin/wine C:\\windows\\command\\start.exe /Unix @WOWSPATH@/WorldOfWarships.exe "$replayfile"
