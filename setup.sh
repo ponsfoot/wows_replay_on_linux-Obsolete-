@@ -12,6 +12,8 @@ gameabbr=(wows wot)
 gameicon=(F66B_WoWSLauncher.0 7680_WoTLauncher.0)
 gameexe=(WorldOfWarships.exe WorldOfTanks.exe)
 
+progmenu="${xdg_data_home}/applications/wine/Programs/"
+
 for i in 0 1
 do
     name=${gamename[i]}
@@ -19,7 +21,11 @@ do
     icon=${gameicon[i]}
     exe=${gameexe[i]}
 
-    menudir=`ls -d "${xdg_data_home}/applications/wine/Programs/${name}"* | head -n1`
+    if [[ ! `ls "$progmenu" | grep "^$name"*` ]]; then
+        continue
+    fi
+
+    menudir=`ls -d "${progmenu}/${name}"* | head -n1`
     wineprefix=`sed -n 's/.*WINEPREFIX="\(.\+\)".*/\1/p' "${menudir}/${name}.desktop"`
     gamepath=`sed -n 's/Path=\(.\+\)/\1/p' "${menudir}/${name}.desktop"`
     launcher="${gamepath%/*}/play_replay_${abbr}.sh"
