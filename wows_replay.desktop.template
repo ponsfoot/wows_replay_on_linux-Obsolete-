@@ -1,9 +1,9 @@
 [Desktop Entry]
 Type=Application
-Name=World of Warships play replay
+Name=@NAME@ play replay
 Exec=@LAUNCHER@ %f
-MimeType=application/x-wine-wows-replay;
-Path=@WOWSPATH@
-Icon=F66B_WoWSLauncher.0
+MimeType=application/x-wine-@ABBR@-replay;
+Path=@GAMEPATH@
+Icon=@ICON@
 NoDisplay=true
 StartupNotify=true

@@ -9,7 +9,7 @@ case "$1" in
         ;;
     *)
         if [[ -f /usr/bin/notify-send ]]; then
-            /usr/bin/notify-send -i F66B_WoWSLauncher.0 'Failed to play WoWS replay' "File path is not Wine drive configuration:\n$1"
+            /usr/bin/notify-send -i @ICON@ 'Failed to play replay' "File path is not Wine drive configuration:\n$1"
         fi
         exit 1
         ;;
@@ -17,4 +17,4 @@ esac
 
 replayfile="${replayfile//\//\\\\}"
 
-env WINEPREFIX="@WINEPREFIX@" /usr/bin/wine C:\\windows\\command\\start.exe /Unix @WOWSPATH@/WorldOfWarships.exe "$replayfile"
+env WINEPREFIX="@WINEPREFIX@" /usr/bin/wine C:\\windows\\command\\start.exe /Unix @GAMEPATH@/@EXE@ "$replayfile"
