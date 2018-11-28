@@ -19,6 +19,7 @@ Replay files are stored in `${WINEPREFIX}/dosdevices/c:/Games/World_of_{Tanks,Wa
 - ${WINEPREFIX}/ *\<Path WoWS installed \>* /play_replay_wows.sh
 
 if $XDG_DATA_HOME is not set, default is equal to `${HOME}/.local/share`.
+if $WINEPREFIX is not set, default is equal to `${HOME}/.wine`.
 
 ## Uninsall
 Remove files the above and run the following commands.
