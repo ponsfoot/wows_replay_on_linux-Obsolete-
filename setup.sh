@@ -21,7 +21,7 @@ do
     icon=${gameicon[i]}
     exe=${gameexe[i]}
 
-    if [[ ! `ls "$progmenu" | grep "^$name.*"` ]]; then
+    if [[ ! `ls "$progmenu" | grep "^${name}.*"` ]]; then
         continue
     fi
 

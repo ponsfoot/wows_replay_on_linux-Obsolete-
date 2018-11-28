@@ -1,4 +1,5 @@
 # Play WoT & WoWS replay files on Linux
+Only **"Classic Launcher"** is supported (WGC is not supported).
 
 ## Install
 1. Clone git repo or download and extracct zip file
@@ -30,6 +31,5 @@ $ update-desktop-database "${XDG_DATA_HOME:-${HOME}/.local/share}/applications/"
 ```
 
 ## Note
-- WGC is not supported now.
 - Replay files have to be placed under Wine drive configuration (can be described as Windows file path) and same $WINEPREFIX with WoT/WoWS installed.
 - If you have installed WoT/WoWS plural (e.g. WoWS_NA and WoWS_RU), first one sorted by name will be chosen as replay environment.
