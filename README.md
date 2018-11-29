@@ -2,7 +2,7 @@
 Only **"Classic Launcher"** is supported (WGC is not supported).
 
 ## Install
-1. Clone git repo or download and extracct zip file
+1. Clone git repo or download and extract zip file
 2. run `setup.sh`
 
 ## How to play replays
@@ -22,7 +22,7 @@ Replay files are stored in `${WINEPREFIX}/dosdevices/c:/Games/World_of_{Tanks,Wa
 if $XDG_DATA_HOME is not set, default is equal to `${HOME}/.local/share`.
 if $WINEPREFIX is not set, default is equal to `${HOME}/.wine`.
 
-## Uninsall
+## Uninstall
 Remove files the above and run the following commands.
 
 ```
