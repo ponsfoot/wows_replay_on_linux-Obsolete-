@@ -13,8 +13,8 @@ do
             ;;
         h)
             echo -e 'Usage: setup.sh [options]\n'
-            echo    '-u	uninstall'
-            echo    '-h	print this help and exit'
+            echo -e '-u\tuninstall'
+            echo -e '-h\tprint this help and exit'
             exit 0
             ;;
     esac
