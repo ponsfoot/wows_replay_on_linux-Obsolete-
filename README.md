@@ -1,11 +1,11 @@
-# Play WoT & WoWS replay files on Linux
+# Enable to watch WoT & WoWS replay files on Linux
 Only **"Classic Launcher"** is supported (WGC is not supported).
 
 ## Install
 1. Clone git repo or download and extract zip file
 2. run `setup.sh`
 
-## How to play replays
+## How to watch replays
 Replay files are stored in `${WINEPREFIX}/dosdevices/c:/Games/World_of_{Tanks,Warships}* (or your own custom)/replays/`
 
 1. Right click on a replay file (\*.wotreplay/\*.wowsreplay)
