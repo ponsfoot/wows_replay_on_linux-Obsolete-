@@ -23,12 +23,7 @@ if $XDG_DATA_HOME is not set, default is equal to `${HOME}/.local/share`.
 if $WINEPREFIX is not set, default is equal to `${HOME}/.wine`.
 
 ## Uninstall
-Remove files the above and run the following commands.
-
-```
-$ update-mime-database "${XDG_DATA_HOME:-${HOME}/.local/share}/mime/"
-$ update-desktop-database "${XDG_DATA_HOME:-${HOME}/.local/share}/applications/"
-```
+run `setup.sh -u`
 
 ## Note
 - Replay files have to be placed under Wine drive configuration (can be described as Windows file path) and same $WINEPREFIX with WoT/WoWS installed.

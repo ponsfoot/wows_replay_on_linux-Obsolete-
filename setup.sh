@@ -3,16 +3,32 @@
 IFS='
 '
 
+INSTALL=yes
+
+while getopts 'uh' opt
+do
+    case $opt in
+        u)
+            INSTALL=
+            ;;
+        h)
+            echo -e 'Usage: setup.sh [options]\n'
+            echo    '-u	uninstall'
+            echo    '-h	print this help and exit'
+            exit 0
+            ;;
+    esac
+done
+
 xdg_data_home="${XDG_DATA_HOME:-${HOME}/.local/share}"
 
 basedir=`dirname "$(readlink -f $0)"`
+progmenu="${xdg_data_home}/applications/wine/Programs/"
 
 gamename=("World of Warships" "World of Tanks")
 gameabbr=(wows wot)
 gameicon=(F66B_WoWSLauncher.0 7680_WoTLauncher.0)
 gameexe=(WorldOfWarships.exe WorldOfTanks.exe)
-
-progmenu="${xdg_data_home}/applications/wine/Programs/"
 
 for i in 0 1
 do
@@ -29,23 +45,32 @@ do
     wineprefix=`sed -n 's/.*WINEPREFIX="\(.\+\)".*/\1/p' "${menudir}/${name}.desktop"`
     gamepath=`sed -n 's/Path=\(.\+\)/\1/p' "${menudir}/${name}.desktop"`
     launcher="${gamepath%/*}/play_replay_${abbr}.sh"
+    desktop="${xdg_data_home}/applications/${abbr}_replay.desktop"
+    mime="${xdg_data_home}/mime/packages/x-wine-${abbr}-replay.xml"
 
-    sed -e "s|@WINEPREFIX@|${wineprefix}|g" \
-        -e "s|@GAMEPATH@|${gamepath}|g" \
-        -e "s|@ICON@|${icon}|g" \
-        -e "s|@EXE@|${exe}|g" \
-        "${basedir}/play_replay_wows.sh.template" > "$launcher"
-    sed -e "s|@NAME@|${name}|g" \
-        -e "s|@LAUNCHER@|${launcher}|g" \
-        -e "s|@ABBR@|${abbr}|g" \
-        -e "s|@GAMEPATH@|${gamepath}|g" \
-        -e "s|@ICON@|${icon}|g" \
-        "${basedir}/wows_replay.desktop.template" > "${xdg_data_home}/applications/${abbr}_replay.desktop"
-    sed -e "s|@ABBR@|${abbr}|g" \
-        -e "s|@NAME@|${name}|g" \
-        "${basedir}/x-wine-wows-replay.xml.template" > "${xdg_data_home}/mime/packages/x-wine-${abbr}-replay.xml"
+    if [[ $INSTALL ]]; then
+        sed -e "s|@WINEPREFIX@|${wineprefix}|g" \
+            -e "s|@GAMEPATH@|${gamepath}|g" \
+            -e "s|@ICON@|${icon}|g" \
+            -e "s|@EXE@|${exe}|g" \
+            "${basedir}/play_replay_wows.sh.template" > "$launcher"
+        sed -e "s|@NAME@|${name}|g" \
+            -e "s|@LAUNCHER@|${launcher}|g" \
+            -e "s|@ABBR@|${abbr}|g" \
+            -e "s|@GAMEPATH@|${gamepath}|g" \
+            -e "s|@ICON@|${icon}|g" \
+            "${basedir}/wows_replay.desktop.template" > "$desktop"
+        sed -e "s|@ABBR@|${abbr}|g" \
+            -e "s|@NAME@|${name}|g" \
+            "${basedir}/x-wine-wows-replay.xml.template" > "$mime"
 
-    chmod +x "$launcher"
+        chmod 744 "$launcher"
+    else
+        for target in "$launcher" "$desktop" "$mime"
+        do
+            rm -f "$target"
+        done
+    fi
 done
 
 update-mime-database "${xdg_data_home}/mime/"
