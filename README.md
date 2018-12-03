@@ -1,4 +1,4 @@
-# Enable to watch WoT & WoWS replay files on Linux
+# Enable to watch WoT & WoWS replays on Linux
 Only **"Classic Launcher"** is supported (WGC is not supported).
 
 ## Install
@@ -26,5 +26,5 @@ if $WINEPREFIX is not set, default is equal to `${HOME}/.wine`.
 run `setup.sh -u`
 
 ## Note
-- Replay files have to be placed under Wine drive configuration (can be described as Windows file path) and same $WINEPREFIX with WoT/WoWS installed.
+- Replay files have to be placed under Wine drive configuration (can be described as Windows file path) and same $WINEPREFIX with WoT/WoWS installed ("drive_c/users/ *\<user\>* /My Documents" is synbolic link to your "${HOME}/ *\<user\>* /Documents").
 - If you have installed WoT/WoWS plural (e.g. WoWS_NA and WoWS_RU), first one sorted by name will be chosen as replay environment.
