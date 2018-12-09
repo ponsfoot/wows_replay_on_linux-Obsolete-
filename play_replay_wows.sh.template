@@ -1,4 +1,11 @@
 #!/usr/bin/bash -e
+##################################################################
+#
+# Replay World of Tanks/Warships on Linux
+#
+# https://github.com/ponsfoot/wows_replay_on_linux
+#
+##################################################################
 
 case "$1" in
     */dosdevices/*)
