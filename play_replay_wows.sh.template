@@ -11,6 +11,7 @@ case "$1" in
         if [[ -f /usr/bin/notify-send ]]; then
             /usr/bin/notify-send -i @ICON@ 'Failed to play replay' "File path is not Wine drive configuration:\n$1"
         fi
+        echo "Failed to play replay - File path is not Wine drive configuration: $1" 1>&2
         exit 1
         ;;
 esac
